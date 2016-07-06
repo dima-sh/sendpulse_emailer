@@ -1,0 +1,86 @@
+body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    padding: 20px;
+
+    textarea {
+        width: 100%;
+        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    }
+}
+.hidden {
+    display: none;
+}
+.form-group {
+    margin-bottom: 10px;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 13px;
+        color: #999;
+    }
+}
+.form-control, .btn {
+    font-size: 15px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+.form-control {
+    padding: 4px 6px;
+    width: 100%;
+
+    textarea& {
+        font-size: 13px
+    }
+}
+.btn {
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.form-footer {
+    margin-top: 20px;
+}
+.preview-block {
+    border: 1px dashed #ccc;
+    font-size: 14px;
+    padding: 8px;
+}
+
+/******** bootstrap-like grid ********/
+.make-grid(@n, @bp, @i: 1) when (@i =< @n) {
+  .col-@{bp}-@{i} {
+    width: (@i * 100% / @n);
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .make-grid(@n, @bp, (@i + 1));
+}
+@media (min-width: 768px) {
+  .make-grid(12, sm);
+}
+@media (min-width: 1200px) {
+  .make-grid(12, lg);
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+
+    &::before,
+    &::after {
+        clear: both;
+        display: table;
+        content: " ";
+    }
+}

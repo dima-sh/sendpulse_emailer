@@ -1,0 +1,11 @@
+{
+  "name": "sendpulse_emailer",
+  "version": "1.0.0",
+  "description": "Simple app to send email with Sendpulse SMTP API",
+  "author": "Dmitriy Shemendiuk",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "path": "^0.12.7"
+  }
+}
