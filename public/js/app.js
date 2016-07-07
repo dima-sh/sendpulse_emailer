@@ -17,7 +17,7 @@ $(document).ready(function(){
 
         var dataObj = {};
         dataObj.html = textarea.val();
-        dataObj.text = previewBlock.text();
+        dataObj.text = previewBlock.text().trim();
         dataObj.to = $('#emailTo').val();
         dataObj.subj = $('#emailSubj').val();
 

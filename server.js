@@ -1,11 +1,10 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require('path');
-var app = express();
 var config = require('./config');
-var port = process.env.PORT || config.port;
-//var routes = require('./routes/index');
 var sendMail = require('./utils/sendmail');
+var app = express();
+var port = process.env.PORT || config.port;
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +21,7 @@ app.get('/',function(req,res){
     res.sendfile("./public/index.html");
 });
 app.post('/sendmail',function(req,res){
-    console.log('POST')
+    console.log('POST');
     res.setHeader('Access-Control-Allow-Origin', '*');
     sendMail(req.body, function(result){
         res.send(result);
