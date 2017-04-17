@@ -1,6 +1,6 @@
 module.exports = function sendMail(dataObj, cb) {
     var config = require('../config');
-    var sendpulse = require("../vendor/sendpulse-rest-api-node.js/api/sendpulse.js");
+    var sendpulse = require("sendpulse-api");
 
     var API_USER_ID = config.sendpulse.userId;
     var API_SECRET = config.sendpulse.secret;
