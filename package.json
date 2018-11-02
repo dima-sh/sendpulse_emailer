@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Simple app to send email with Sendpulse SMTP API",
   "author": "Dmitriy Shemendiuk",
+  "main": "node server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
