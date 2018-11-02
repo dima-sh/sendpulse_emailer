@@ -1,34 +1,30 @@
-module.exports = function sendMail(dataObj, cb) {
-    var config = require('../config');
-    var sendpulse = require("sendpulse-api");
+module.exports = function sendMail(data, cb) {
+    const sendpulse = require('sendpulse-api');
 
-    var API_USER_ID = config.sendpulse.userId;
-    var API_SECRET = config.sendpulse.secret;
-    var TOKEN_STORAGE="file";
+    const API_USER_ID = process.env.SENDPULSE_USER_ID;
+    const API_SECRET = process.env.SENDPULSE_SECRET;
+    const SENDER_NAME = process.env.SENDPULSE_SENDER,
+    const EMAIL_FROM = process.env.SENDPULSE_FROM;
+    const TOKEN_STORAGE = 'file';
 
     sendpulse.init(API_USER_ID,API_SECRET,TOKEN_STORAGE);
 
-    /**
-     * Function to process response data
-     *
-     * @param data
-     */
-    var answerGetter = function answerGetter(data){
-        console.log(data);
+    function answerGetter(res){
+        console.log(res);
     };
 
-    var email = {
-        "html" : dataObj.html,
-        "text" : dataObj.text,
-        "subject" : dataObj.subj,
+    let email = {
+        "html" : data.html,
+        "text" : data.text,
+        "subject" : data.subj,
         "from" : {
-            "name" : config.sendpulse.senderName,
-            "email" : config.sendpulse.emailFrom
+            "name" : SENDER_NAME,
+            "email" : EMAIL_FROM
         },
         "to" : [
             {
-                "name" : dataObj.to,
-                "email" : dataObj.to
+                "name" : data.to,
+                "email" : data.to
             },
         ],
         "bcc" : []
