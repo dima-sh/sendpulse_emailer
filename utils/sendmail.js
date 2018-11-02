@@ -3,7 +3,7 @@ module.exports = function sendMail(data, cb) {
 
     const API_USER_ID = process.env.SENDPULSE_USER_ID;
     const API_SECRET = process.env.SENDPULSE_SECRET;
-    const SENDER_NAME = process.env.SENDPULSE_SENDER,
+    const SENDER_NAME = process.env.SENDPULSE_SENDER;
     const EMAIL_FROM = process.env.SENDPULSE_FROM;
     const TOKEN_STORAGE = 'file';
 
