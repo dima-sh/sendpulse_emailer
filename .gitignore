@@ -1,7 +1,6 @@
 node_modules/
-bower_components/
+.env
 .idea
 .DS_Store
 *.map
 file*
-config.json
