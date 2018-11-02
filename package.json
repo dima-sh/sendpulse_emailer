@@ -11,6 +11,7 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "path": "^0.12.7",
-    "sendpulse-api": "^1.0.1"
+    "sendpulse-api": "^1.0.1",
+    "dotenv": "^6.0.0"
   }
 }
