@@ -1,9 +1,0 @@
-{
-    "port": 8120,
-    "sendpulse": {
-        "userId": "YOUR-API-USER-ID",
-        "secret": "YOUR-API-SECRET",
-        "senderName" : "YOUR-SENDER-NAME",
-        "emailFrom" : "YOUR-FROM-EMAIL-ADDRESS"
-    }
-}
