@@ -6,6 +6,7 @@ module.exports = function sendMail(data, cb) {
     const SENDER_NAME = process.env.SENDPULSE_SENDER;
     const EMAIL_FROM = process.env.SENDPULSE_FROM;
     const TOKEN_STORAGE = 'file';
+    const MAILING_LIST_ID = process.env.MAILING_LIST_ID;
 
     sendpulse.init(API_USER_ID,API_SECRET,TOKEN_STORAGE);
 
@@ -29,6 +30,8 @@ module.exports = function sendMail(data, cb) {
         ],
         "bcc" : []
     };
+
+    sendpulse.addEmails(console.log, MAILING_LIST_ID, [{email:data.to,variables:{message:data.subj}}]);
 
     cb(sendpulse.smtpSendMail(answerGetter,email));
 };
